@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('includes/navBar')%>
+
+    <div class="content-chat">
+        <div class="global-messages">
+
+                <%if(mensagens) {%>
+                    <%mensagens.forEach(msg => { %>
+                        <% if(msg.id === idParam) { %>
+                                <div class="mensagem-container right">
+                        <%} else{%>
+                                <div class="mensagem-container">
+                        <%}%>   
+                                    <div class="info-msg">
+                                        <div class="title-msg"><%=msg.titulo%></div>
+                                        <div class="author"><%=msg.idAuthor%></div>
+                                    </div>
+                                    
+                                    <div class="msg-block">'
+                                        <%=msg.mensagem%>'.
+                                    </div>
+                                    <div class="post-date"><%=msg.data%></div>
+                                </div>
+
+                    <%})%>
+                <%}%>
+        </div>
+
+        <div class="send-message">
+            <form action="" method="post">
+                <div>
+                    <label for="title-input">Titulo</label>
+                    <input type="text" name="title" id="title-input">
+                </div>
+
+                <div>
+                    <label for="mensagem-input">Mensagem</label>
+                    <input type="text" name="mensagem" id="mensagem-input">
+                </div>
+
+                <div class="div-btn">
+                    <button>send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('includes/footer')%>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<nav class="navBar">
+    <div class="content">
+        <div class="logo">
+            <h1>OurTalk</h1>
+        </div>
+        <div class="navegacion">
+            <ul>
+                <%if(user){%>
+                    <li><a href="/deleteSession">Sair</a></li>
+                <%}else{%>
+                    <li><a href="/">home</a></li>
+                    <li><a href="/cadastro">Cadastro</a></li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+</nav>

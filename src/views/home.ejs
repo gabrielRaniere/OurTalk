@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="body-home">
+    <%-include('includes/navBar')%>
+
+    <div class="success">
+        <%if(success) {%>
+            <%=success%>
+        <%}%>
+    </div>
+
+    <div class="error-session">
+        <%if(errorSession) {%>
+            <%=errorSession%>
+        <%}%>
+    </div>
+
+    <div class="container-cadastro">
+        <div class="login-container">
+            <h1>Login</h1>
+
+            <form action="" method="post" class="login">
+                <div class="user">
+                    <label for="userName">Usuário</label>
+                    <input type="text" name="userName" class="userName">
+                    <span class="error"></span>
+                </div>
+                <div class="password">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" class="pass">
+                    <span class="error">
+                        <%if(errors) {%>
+                            <%=errors%>
+                        <%}%>
+                    </span>
+                </div>
+                
+                <p>Não possui uma conta ? <a href="/cadastro">criar conta</a></p>
+
+                <button>Entrar</button>
+            </form>
+        </div>
+        <div class="img-login">
+            <img src="/undraw_mobile_login_re_9ntv.svg" alt="imagem de login">
+        </div>
+    </div>
+
+    <%- include('includes/shapeDivider')%>
+
+    <%-include('includes/footer')%>
+</body>
+</html>
